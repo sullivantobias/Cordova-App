@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 thumbnail">
+      <div v-for="card in cards">
+        <b-card
+          overlay
+          :img-src="imgd"
+          img-alt="Card Image"
+          text-variant="white"
+          :title="card.title"
+          sub-title="Subtitle"
+        >
+          <p class="card-text">
+            Some quick example text to build on the card and make up the bulk of
+            the card's content.
+          </p>
+        </b-card>
+      </div>
+    </div>
+  </div>
+
+  <div></div>
+</div>
