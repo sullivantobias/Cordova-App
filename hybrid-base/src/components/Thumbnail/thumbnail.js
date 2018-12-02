@@ -3,12 +3,10 @@
  */
 
 import data from '../../dataset/system-solar-planets.json';
-import img from '../../assets/mercury.jpg';
 
 export default {
   data() {
     return {
-      imgd: '',
       cards: [],
     };
   },
@@ -18,13 +16,10 @@ export default {
       let planetes = { title: '', url: '' };
 
       planetes.title = prop;
-      planetes.url = data.sections[prop][0];
+
+      planetes.url = require(`../../assets/${prop}.jpg`);
 
       this.$data.cards.push(planetes);
     }
-  },
-
-  mounted() {
-    this.$data.imgd = img;
   },
 };
