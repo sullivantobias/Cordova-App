@@ -4,6 +4,8 @@
 
 import data from '../../dataset/system-solar-planets.json';
 
+import Truncate from '../../libraries/truncate';
+
 export default {
   data() {
     return {
@@ -13,13 +15,15 @@ export default {
 
   created() {
     for (let prop in data.sections) {
-      let planetes = { title: '', url: '' };
+      let planets = { title: '', url: '', overview: '' };
 
-      planetes.title = prop;
+      planets.title = prop;
 
-      planetes.url = require(`../../assets/${prop}.jpg`);
+      planets.url = require(`../../assets/${prop}.jpg`);
 
-      this.$data.cards.push(planetes);
+      planets.overview = Truncate(data.sections[prop][0].Overview, 18);
+
+      this.$data.cards.push(planets);
     }
   },
 };
