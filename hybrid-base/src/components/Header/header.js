@@ -2,6 +2,8 @@
  * Tabs component JS
  */
 
+import LastSegment from '../../libraries/lastSegmentUrl';
+
 export default {
   data() {
     return {
@@ -10,7 +12,8 @@ export default {
     };
   },
   mounted() {
-    const currentPage = window.location.pathname.replace(/^\/+|\/+$/g, '');
+    const currentPage = LastSegment(window.location.pathname);
+
     this.$data.Reference =
       currentPage.charAt(0).toUpperCase() + currentPage.slice(1);
   },
