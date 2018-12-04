@@ -11,13 +11,14 @@
   );
 
   a {
+    text-align: center;
     text-decoration: none;
     &:hover {
       color: $PRed;
     }
   }
-  svg,
-  path {
+  i {
+    font-size: 30px;
     pointer-events: none;
   }
 }
