@@ -1,13 +1,21 @@
 @import "~material-bottom-nav";
 
+@import "../../styles/helper";
+
 .bottom-nav {
   @include bottom-nav(
     $background-color: #000,
-    $active-color: #ffffff,
+    $active-color: $PRed,
     $inactive-color: #e0e0e0,
     $hide-inactive-labels: true
   );
 
+  a {
+    text-decoration: none;
+    &:hover {
+      color: $PRed;
+    }
+  }
   svg,
   path {
     pointer-events: none;

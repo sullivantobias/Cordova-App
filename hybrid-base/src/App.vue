@@ -1,27 +1,25 @@
 <template>
   <div id="app">
+    <Header/>
     <Tabs/>
-    <Thumbnail/>
 
-    <router-view/>
+    <router-view name="home"/>
+    <router-view name="planets"/>
   </div>
 </template>
 
 <script>
-import Thumbnail from "./components/Thumbnail/Thumbnail.vue";
 import Tabs from "./components/Tabs/Tabs.vue";
+import Header from "./components/Header/Header.vue";
 
 export default {
   name: "App",
-  components: { Thumbnail, Tabs }
+  components: { Tabs, Header }
 };
 </script>
 
 
 <style lang="scss">
-#app {
-  background-color: #000;
-}
 </style>
 
 

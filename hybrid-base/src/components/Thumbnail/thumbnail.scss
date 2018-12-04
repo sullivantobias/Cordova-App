@@ -1,3 +1,10 @@
-.sample {
-  color: red;
+@import "../../styles/helper";
+
+.thumbnail {
+  padding: 0;
+
+  .card {
+    border: 3px solid $PRed;
+    margin-bottom: 40px;
+  }
 }
