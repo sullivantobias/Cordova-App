@@ -1,7 +1,12 @@
 <template>
-  <div>This is the description page</div>
+  <div>
+    <Description/>
+  </div>
 </template>
 
 <script>
-export default {};
+import Description from "../components/Description/Description.vue";
+export default {
+  components: { Description }
+};
 </script>

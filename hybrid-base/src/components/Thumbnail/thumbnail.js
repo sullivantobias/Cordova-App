@@ -23,9 +23,6 @@ export default {
     loadCard() {
       const planetsInfos = new planetsInformations();
       planetsInfos.createCards(this.$data.cards);
-
-      planetsInfos.createCards();
-      planetsInfos.specificPlanet('Mercury');
     },
     activeThumbnail() {
       document.querySelectorAll('.thumbnail a h4').forEach((element) => {

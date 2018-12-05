@@ -5,7 +5,6 @@ import Truncate from './truncate';
 /**
  * @class planetsInformations
  */
-
 export class planetsInformations {
   /**
    * @constructor
@@ -13,7 +12,10 @@ export class planetsInformations {
   constructor() {
     this.listOfPlanets = [];
   }
-
+  /**
+   *
+   * @param {*} objectToFill
+   */
   createCards(objectToFill) {
     for (let prop in data.sections) {
       let planets = { title: '', url: '', overview: '' };
@@ -30,12 +32,17 @@ export class planetsInformations {
       }
     }
   }
-
+  /**
+   *
+   * @param {*} specificPlanet
+   */
   specificPlanet(specificPlanet) {
+    let element;
     this.listOfPlanets.forEach((el) => {
       if (el.title === specificPlanet) {
-        console.log(el);
+        element = el;
       }
     });
+    return element;
   }
 }
