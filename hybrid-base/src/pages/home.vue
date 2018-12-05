@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <a href="planets">planets link</a>
-  </div>
+  <div>Home Page</div>
 </template>
 
 <script>

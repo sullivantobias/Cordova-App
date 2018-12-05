@@ -5,6 +5,7 @@
 
     <router-view name="home"/>
     <router-view name="planets"/>
+    <router-view name="description"/>
   </div>
 </template>
 

@@ -6,6 +6,8 @@ import home from '../pages/home.vue';
 
 import planets from '../pages/mainPlanets.vue';
 
+import description from '../pages/description.vue';
+
 export const router = new VueRouter({
   mode: 'history',
   routes: [
@@ -17,12 +19,20 @@ export const router = new VueRouter({
     },
     {
       path: '*',
-      component: home,
+      components: {
+        home: home,
+      },
     },
     {
       path: '/planets',
       components: {
         planets: planets,
+      },
+    },
+    {
+      path: '/description/*',
+      components: {
+        description: description,
       },
     },
   ],

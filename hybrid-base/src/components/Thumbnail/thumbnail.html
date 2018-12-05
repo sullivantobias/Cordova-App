@@ -2,15 +2,17 @@
   <div class="row">
     <div class="col-12 thumbnail">
       <div v-for="card in cards">
-        <b-card
-          overlay
-          :img-src="card.url"
-          img-alt="Card Image"
-          text-variant="white"
-          :title="card.title"
-        >
-          <p>{{ card.overview }}</p>
-        </b-card>
+        <a href="description">
+          <b-card
+            overlay
+            :img-src="card.url"
+            img-alt="Card Image"
+            text-variant="white"
+            :title="card.title"
+          >
+            <p>{{ card.overview }}</p>
+          </b-card>
+        </a>
       </div>
     </div>
   </div>

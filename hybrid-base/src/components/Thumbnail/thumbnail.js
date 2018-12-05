@@ -14,16 +14,37 @@ export default {
   },
 
   created() {
-    for (let prop in data.sections) {
-      let planets = { title: '', url: '', overview: '' };
+    this.loadCard();
+  },
 
-      planets.title = prop;
+  mounted() {
+    this.activeThumbnail();
+  },
 
-      planets.url = require(`../../assets/${prop}.jpg`);
+  methods: {
+    loadCard() {
+      for (let prop in data.sections) {
+        let planets = { title: '', url: '', overview: '' };
+        planets.title = prop;
 
-      planets.overview = Truncate(data.sections[prop][0].Overview, 18);
+        planets.url = require(`../../assets/${prop}.jpg`);
 
-      this.$data.cards.push(planets);
-    }
+        planets.overview = Truncate(data.sections[prop][0].Overview, 18);
+
+        this.$data.cards.push(planets);
+      }
+    },
+    activeThumbnail() {
+      document.querySelectorAll('.thumbnail a h4').forEach((element) => {
+        const urlSegment = element.innerHTML;
+
+        element.parentNode.parentNode.parentNode.setAttribute(
+          'href',
+          element.parentNode.parentNode.parentNode.getAttribute('href') +
+            '/' +
+            urlSegment
+        );
+      });
+    },
   },
 };
