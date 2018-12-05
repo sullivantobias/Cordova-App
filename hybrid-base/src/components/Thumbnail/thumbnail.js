@@ -2,9 +2,7 @@
  * thumbnail component JS
  */
 
-import data from '../../dataset/system-solar-planets.json';
-
-import Truncate from '../../libraries/truncate';
+import { planetsInformations } from '../../libraries/planetsInformation';
 
 export default {
   data() {
@@ -23,16 +21,11 @@ export default {
 
   methods: {
     loadCard() {
-      for (let prop in data.sections) {
-        let planets = { title: '', url: '', overview: '' };
-        planets.title = prop;
+      const planetsInfos = new planetsInformations();
+      planetsInfos.createCards(this.$data.cards);
 
-        planets.url = require(`../../assets/${prop}.jpg`);
-
-        planets.overview = Truncate(data.sections[prop][0].Overview, 18);
-
-        this.$data.cards.push(planets);
-      }
+      planetsInfos.createCards();
+      planetsInfos.specificPlanet('Mercury');
     },
     activeThumbnail() {
       document.querySelectorAll('.thumbnail a h4').forEach((element) => {
