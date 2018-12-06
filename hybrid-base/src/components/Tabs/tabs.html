@@ -1,8 +1,8 @@
 <nav class="bottom-nav">
   <a
     class="bottom-nav__action bottom-nav__action--active"
-    href="/"
-    @click="activeTabs($event.target)"
+    href="/#"
+    @click="activeTabs($event.target), allowingElement()"
   >
     <i class="fa fa-home"></i> <span class="bottom-nav__label">Home</span>
   </a>
