@@ -1,5 +1,4 @@
 import { planetsInformations } from '../../libraries/planetsInformation';
-import LastSegmentUrl from '../../libraries/lastSegmentUrl';
 
 /**
  * Tabs component JS
@@ -17,9 +16,8 @@ export default {
 
     planetsInfos.createCards();
 
-    this.$data.planet = planetsInfos.specificPlanet(
-      LastSegmentUrl(window.location.pathname)
+    this.planet = planetsInfos.specificPlanet(
+      window.location.hash.split('-')[1]
     );
-    console.log(this.$data.planet);
   },
 };
