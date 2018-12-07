@@ -1,5 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-12"><img :src="planet.url" class="img-fluid" /></div>
+    <div class="col-12">
+      <img :src="planet.url" class="img-fluid" />
+      <h1 class="text-center col-12">{{ planet.title }}</h1>
+      <p class="text-center col-12">{{ planet.overview }}</p>
+    </div>
   </div>
 </div>

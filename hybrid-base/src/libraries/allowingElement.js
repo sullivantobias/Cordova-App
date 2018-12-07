@@ -6,6 +6,5 @@ export const allowingElement = (element) => {
       ELEMENTS[key].allow = false;
     }
   }
-
-  element.allow = true;
+  if (element) element.allow = true;
 };

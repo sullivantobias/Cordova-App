@@ -21,7 +21,8 @@ export default {
           .classList.remove('bottom-nav__action--active');
       }
 
-      element.classList.add('bottom-nav__action--active');
+      if (!element.classList.contains('bottom-nav__action--active'))
+        element.classList.add('bottom-nav__action--active');
     },
     allowingElement,
   },
