@@ -4,10 +4,16 @@
 
 import { planetsInformations } from '../../libraries/planetsInformation';
 
+import { allowingElement } from '../../libraries/allowingElement';
+
+import { ELEMENTS } from '../../global/allowedElements.js';
+
 export default {
   data() {
     return {
       cards: [],
+
+      ELEMENTS,
     };
   },
 
@@ -31,10 +37,11 @@ export default {
         element.parentNode.parentNode.parentNode.setAttribute(
           'href',
           element.parentNode.parentNode.parentNode.getAttribute('href') +
-            '/' +
+            '-' +
             urlSegment
         );
       });
     },
+    allowingElement,
   },
 };

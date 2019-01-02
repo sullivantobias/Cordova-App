@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 thumbnail">
       <div v-for="card in cards">
-        <a href="description">
+        <a href="#description" @click="allowingElement(ELEMENTS.description)">
           <b-card
             overlay
             :img-src="card.url"
