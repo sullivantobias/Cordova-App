@@ -1,11 +1,15 @@
 /**
  * BackToTop component JS
  */
+import { addBackToTop } from 'vanilla-back-to-top';
 
 export default {
   data() {
     return {};
   },
-
-  methods: {},
+  mounted() {
+    addBackToTop({
+      diameter: 40,
+    });
+  },
 };

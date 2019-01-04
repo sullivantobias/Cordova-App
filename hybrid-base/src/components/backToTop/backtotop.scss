@@ -1,1 +1,7 @@
 @import "../../styles/helper";
+
+#back-to-top {
+  background-color: $PRed;
+  bottom: 8px;
+  z-index: 1000;
+}

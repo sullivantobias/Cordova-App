@@ -3,6 +3,7 @@
     <div class="container content">
       <Header/>
       <Tabs/>
+      <Backtotop/>
 
       <Thumbnail v-if="ELEMENTS.thumbnail.allow"/>
       <Description v-if="ELEMENTS.description.allow"/>
@@ -15,13 +16,14 @@ import Tabs from "./components/Tabs/Tabs.vue";
 import Header from "./components/Header/Header.vue";
 import Thumbnail from "./components/Thumbnail/Thumbnail.vue";
 import Description from "./components/Description/Description.vue";
+import Backtotop from "./components/BackToTop/Backtotop.vue";
 
 import { allowingElement } from "./libraries/allowingElement";
 import { ELEMENTS } from "./global/allowedElements.js";
 
 export default {
   name: "App",
-  components: { Tabs, Header, Thumbnail, Description },
+  components: { Tabs, Header, Thumbnail, Description, Backtotop },
   data() {
     return {
       ELEMENTS
