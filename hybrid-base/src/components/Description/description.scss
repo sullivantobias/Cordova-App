@@ -1,1 +1,15 @@
 @import "../../styles/helper";
+
+.titlePlanet {
+  background-color: #5592c6;
+  color: $PRed;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.overview {
+  padding: 0;
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: justify;
+}

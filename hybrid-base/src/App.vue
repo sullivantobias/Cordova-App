@@ -35,13 +35,11 @@ export default {
 
 
 <style lang="scss">
-
-  /** to have a good scroll **/
-  .content {
-    padding: 0;
-    margin-top: 130px;
-    margin-bottom: 70px;
-  }
-  
+/** to have a good scroll **/
+.content {
+  padding: 0;
+  margin-top: 130px;
+  margin-bottom: 70px;
+}
 </style>
 
