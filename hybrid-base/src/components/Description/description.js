@@ -1,7 +1,7 @@
 import { planetsInformations } from '../../libraries/planetsInformation';
 
 /**
- * Tabs component JS
+ * Description component JS
  */
 
 export default {
@@ -12,12 +12,13 @@ export default {
   },
 
   mounted() {
+    window.scrollTo(0, 0)
+    
     const planetsInfos = new planetsInformations();
-
     planetsInfos.createCards();
 
     this.planet = planetsInfos.specificPlanet(
       window.location.hash.split('-')[1]
-    );
-  },
+    );  
+  },  
 };

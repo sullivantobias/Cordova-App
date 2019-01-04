@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    <Header/>
-    <Tabs/>
+    <div class="container content">
+      <Header/>
+      <Tabs/>
 
-    <Thumbnail v-if="ELEMENTS.thumbnail.allow"/>
-    <Description v-if="ELEMENTS.description.allow"/>
+      <Thumbnail v-if="ELEMENTS.thumbnail.allow"/>
+      <Description v-if="ELEMENTS.description.allow"/>
+    </div>
   </div>
 </template>
 
@@ -32,4 +34,14 @@ export default {
 </script>
 
 
+<style lang="scss">
+
+  /** to have a good scroll **/
+  .content {
+    padding: 0;
+    margin-top: 130px;
+    margin-bottom: 70px;
+  }
+  
+</style>
 
