@@ -3,7 +3,7 @@
 .title {
   background-color: black;
   top: 0;
-  position: fixed;
+  position: fixed !important;
   z-index: 100;
   left: 0;
   color: white;

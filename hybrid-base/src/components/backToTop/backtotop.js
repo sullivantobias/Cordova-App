@@ -9,7 +9,7 @@ export default {
   },
   mounted() {
     addBackToTop({
-      diameter: 40,
+      diameter: 36,
     });
   },
 };

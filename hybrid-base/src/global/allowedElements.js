@@ -5,4 +5,13 @@ export let ELEMENTS = {
   description: {
     allow: false,
   },
+  previous: {
+    allow: false,
+  },
+  previousUrl: {
+    url: '',
+  },
+
+  pageStatePrevious: [],
+  pageStateCurrent: [],
 };

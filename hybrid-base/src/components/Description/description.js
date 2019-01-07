@@ -12,13 +12,13 @@ export default {
   },
 
   mounted() {
-    window.scrollTo(0, 0)
-    
+    window.scrollTo(0, 0);
+
     const planetsInfos = new planetsInformations();
     planetsInfos.createCards();
 
     this.planet = planetsInfos.specificPlanet(
-      window.location.hash.split('-')[1]
-    );  
-  },  
+      window.location.hash.split('-')[2]
+    );
+  },
 };
