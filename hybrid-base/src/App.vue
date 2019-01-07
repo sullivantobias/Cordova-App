@@ -5,6 +5,7 @@
       <Header/>
       <Tabs/>
       <Backtotop/>
+      <Lightbox/>
 
       <Thumbnail v-if="ELEMENTS.thumbnail.allow"/>
       <Description v-if="ELEMENTS.description.allow"/>
@@ -19,6 +20,7 @@ import Thumbnail from "./components/Thumbnail/Thumbnail.vue";
 import Description from "./components/Description/Description.vue";
 import Backtotop from "./components/BackToTop/Backtotop.vue";
 import Previousarrow from "./components/previousArrow/Previousarrow.vue";
+import Lightbox from "./components/Lightbox/Lightbox.vue";
 
 import { allowingElement } from "./libraries/allowingElement";
 import { ELEMENTS } from "./global/allowedElements.js";
@@ -31,7 +33,8 @@ export default {
     Thumbnail,
     Description,
     Backtotop,
-    Previousarrow
+    Previousarrow,
+    Lightbox
   },
   data() {
     return {

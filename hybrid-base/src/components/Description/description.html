@@ -1,9 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <img :src="planet.url" class="img-fluid" />
+      <a :href="planet.url" class="lightbox">
+        <img :src="planet.url" class="img-fluid" />
+      </a>
       <h1 class="text-center col-12 titlePlanet">{{ planet.title }}</h1>
       <p class="col-12 overview">{{ planet.overview }}</p>
     </div>
+    <div class="gibki__4"></div>
   </div>
 </div>

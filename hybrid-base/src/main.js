@@ -7,6 +7,7 @@ import BootstrapVue from 'bootstrap-vue';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'rqrauhvmra__tobi/css/tobi.css';
 import 'bootstrap/dist/js/bootstrap';
 
 Vue.use(BootstrapVue);
