@@ -2,7 +2,7 @@
  * PreviousArrow component JS
  */
 
-import { ELEMENTS } from '../../global/allowedElements';
+import {ELEMENTS} from '../../global/allowedElements';
 
 export default {
   data() {

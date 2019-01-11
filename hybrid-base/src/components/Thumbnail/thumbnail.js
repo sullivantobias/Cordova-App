@@ -2,11 +2,11 @@
  * thumbnail component JS
  */
 
-import { planetsInformations } from '../../libraries/planetsInformation';
+import {planetsInformations} from '../../libraries/planetsInformation';
 
-import { allowingElement } from '../../libraries/allowingElement';
+import {allowingElement} from '../../libraries/allowingElement';
 
-import { ELEMENTS } from '../../global/allowedElements.js';
+import {ELEMENTS} from '../../global/allowedElements.js';
 
 export default {
   data() {
@@ -37,12 +37,12 @@ export default {
         element.parentNode.parentNode.parentNode.setAttribute(
           'href',
           element.parentNode.parentNode.parentNode.getAttribute('href') +
-            '-' +
-            urlSegment
+          '-' +
+          urlSegment
         );
       });
     },
     allowingElement,
   },
-  
+
 };

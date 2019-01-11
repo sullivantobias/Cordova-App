@@ -1,5 +1,6 @@
-import { planetsInformations } from '../../libraries/planetsInformation';
-import lightbox from 'rqrauhvmra__tobi';
+import {planetsInformations} from '../../libraries/planetsInformation';
+
+var SimpleLightbox = require('simple-lightbox');
 /**
  * Description component JS
  */
@@ -12,7 +13,8 @@ export default {
   },
 
   mounted() {
-    const lnb = new lightbox();
+
+
     window.scrollTo(0, 0);
 
     const planetsInfos = new planetsInformations();
@@ -21,5 +23,7 @@ export default {
     this.planet = planetsInfos.specificPlanet(
       window.location.hash.split('-')[2]
     );
+
+    const lnb = new SimpleLightbox({elements: '.lightbox a'});
   },
 };

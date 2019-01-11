@@ -2,9 +2,9 @@
  * Tabs component JS
  */
 
-import { allowingElement } from '../../libraries/allowingElement';
+import {allowingElement} from '../../libraries/allowingElement';
 
-import { ELEMENTS } from '../../global/allowedElements.js';
+import {ELEMENTS} from '../../global/allowedElements.js';
 
 export default {
   data() {
