@@ -1,13 +1,18 @@
 <template>
   <div id="app">
     <div class="container content">
-      <Previousarrow v-show="ELEMENTS.previous.allow"/>
+      <transition name="fade">
+        <Previousarrow v-show="ELEMENTS.previous.allow"/>
+      </transition>
       <Header/>
       <Tabs/>
       <Backtotop/>
-
-      <Thumbnail v-if="ELEMENTS.thumbnail.allow"/>
-      <Description v-if="ELEMENTS.description.allow"/>
+      <transition name="fade">
+        <Thumbnail v-if="ELEMENTS.thumbnail.allow"/>
+      </transition>
+      <transition name="fade">
+        <Description v-if="ELEMENTS.description.allow"/>
+      </transition>
     </div>
   </div>
 </template>
@@ -52,6 +57,15 @@
     padding: 0;
     margin-top: 130px;
     margin-bottom: 70px;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+  {
+    opacity: 0;
   }
 </style>
 

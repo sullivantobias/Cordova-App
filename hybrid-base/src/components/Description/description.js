@@ -1,6 +1,4 @@
 import {planetsInformations} from '../../libraries/planetsInformation';
-
-var SimpleLightbox = require('simple-lightbox');
 /**
  * Description component JS
  */
@@ -13,8 +11,6 @@ export default {
   },
 
   mounted() {
-
-
     window.scrollTo(0, 0);
 
     const planetsInfos = new planetsInformations();
@@ -24,6 +20,5 @@ export default {
       window.location.hash.split('-')[2]
     );
 
-    const lnb = new SimpleLightbox({elements: '.lightbox a'});
   },
 };
