@@ -52,6 +52,11 @@
 
 
 <style lang="scss">
+
+  body, .smooth-container {
+    scroll-behavior: smooth
+  }
+
   /** to have a good scroll **/
   .content {
     padding: 0;

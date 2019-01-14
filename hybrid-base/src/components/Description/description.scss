@@ -3,6 +3,7 @@
 .titlePlanet {
   background-color: #5592c6;
   color: $PRed;
+  margin-bottom: 30px;
   font-size: 35px;
   text-transform: uppercase;
 }
@@ -14,17 +15,47 @@
   text-align: justify;
 }
 
-.fade-enter-active {
-  transition: opacity 1s;
+.accordion {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 22px;
+  transition: all .6s;
+
+  i {
+    font-size: 33px;
+    right: 30px;
+    transition: all .6s;
+
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.active {
+    background-color: $PRed;
+    color: black;
+
+    i {
+      color: white;
+    }
+  }
+
+  &:not(.active) {
+    margin-bottom: 25px;
+  }
+
 }
 
-.fade-leave-active {
-  transition: opacity .4s;
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
 }
-
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
-{
-  opacity: 0;
-}
-
 
