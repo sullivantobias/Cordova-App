@@ -50,7 +50,6 @@
   };
 </script>
 
-
 <style lang="scss">
 
   body, .smooth-container {

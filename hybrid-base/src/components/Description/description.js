@@ -5,11 +5,28 @@ import Scroll from 'zenscroll';
 /**
  * Description component JS
  */
-
 export default {
   data() {
     return {
       planet: {},
+      depthTable: {
+        distance: {
+          title: '',
+          value: ''
+        },
+        mass: {
+          title: '',
+          value: ''
+        },
+        surfaceTemperature: {
+          title: '',
+          value: ''
+        },
+        volume: {
+          title: '',
+          value: ''
+        }
+      }
     };
   },
 
@@ -37,6 +54,7 @@ export default {
         }, 80);
 
         const panel = this.nextElementSibling;
+        
         if (panel.style.height) {
           panel.style.height = null;
           this.classList.remove('active');
@@ -48,14 +66,30 @@ export default {
             element.firstElementChild.classList.remove('active');
           });
           this.classList.add('active');
-          console.log(this.firstElementChild.classList)
           this.firstElementChild.classList.remove('active');
           this.firstElementChild.classList.add('active');
           panel.style.height = panel.scrollHeight + "px";
         }
       });
-    })
+    });
 
+    this.createTable();
+  },
+
+  methods: {
+    createTable() {
+      this.depthTable.distance.title = this.planet.depth.distance.title;
+      this.depthTable.distance.value = this.planet.depth.distance.value;
+
+      this.depthTable.mass.title = this.planet.depth.mass.title;
+      this.depthTable.mass.value = this.planet.depth.mass.value;
+
+      this.depthTable.surfaceTemperature.title = this.planet.depth.surfaceTemperature.title;
+      this.depthTable.surfaceTemperature.value = this.planet.depth.surfaceTemperature.value;
+
+      this.depthTable.volume.title = this.planet.depth.volume.title;
+      this.depthTable.volume.value = this.planet.depth.volume.value;
+    }
   }
   ,
 };
