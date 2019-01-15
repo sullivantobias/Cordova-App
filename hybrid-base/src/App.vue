@@ -1,18 +1,20 @@
 <template>
   <div id="app">
     <div class="container content">
-      <transition name="fade">
-        <Previousarrow v-show="ELEMENTS.previous.allow"/>
+      <transition name="slide-fade-arrow">
+        <PreviousArrow v-if="ELEMENTS.previous.allow"/>
       </transition>
       <Header/>
       <Tabs/>
-      <Backtotop/>
-      <transition name="fade">
+      <BackToTop/>
+      <transition name="slide-fade">
         <Thumbnail v-if="ELEMENTS.thumbnail.allow"/>
       </transition>
-      <transition name="fade">
+      <transition name="slide-fade">
         <Description v-if="ELEMENTS.description.allow"/>
       </transition>
+
+
     </div>
   </div>
 </template>
@@ -22,8 +24,8 @@
   import Header from "./components/Header/Header.vue";
   import Thumbnail from "./components/Thumbnail/Thumbnail.vue";
   import Description from "./components/Description/Description.vue";
-  import Backtotop from "./components/BackToTop/Backtotop.vue";
-  import Previousarrow from "./components/previousArrow/Previousarrow.vue";
+  import BackToTop from "./components/BackToTop/Backtotop.vue";
+  import PreviousArrow from "./components/previousArrow/Previousarrow.vue";
 
 
   import {allowingElement} from "./libraries/allowingElement";
@@ -36,8 +38,8 @@
       Header,
       Thumbnail,
       Description,
-      Backtotop,
-      Previousarrow,
+      BackToTop,
+      PreviousArrow,
     },
     data() {
       return {
@@ -63,13 +65,26 @@
     margin-bottom: 70px;
   }
 
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
+  .slide-fade-enter-active {
+    transition: all .8s ease;
   }
 
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
-  {
+  .slide-fade-leave-active {
+    transition: all .2s ease;
+  }
+  .slide-fade-arrow-leave-active {
+    transition: all .1s ease;
+  }
+
+  .slide-fade-enter, .slide-fade-arrow-enter {
+    transform: translateX(-500px);
     opacity: 0;
   }
+
+  .slide-fade-leave-to, .slide-fade-arrow-leave-to {
+    transform: translateX(500px);
+    opacity: 0;
+  }
+
 </style>
 
