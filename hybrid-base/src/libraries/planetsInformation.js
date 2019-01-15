@@ -1,6 +1,7 @@
 import data from '../dataset/system-solar-planets.json';
 
 import Truncate from './truncate';
+import {ELEMENTS} from "../global/allowedElements";
 
 /**
  * @class planetsInformations
@@ -40,24 +41,18 @@ export class planetsInformations {
 
         /** push all planets **/
         objectToFill.push(planets);
-
-        // console.log(planets)
       } else {
         planets.overview = data.sections[prop][0].Overview;
 
         /** retrieve depth informations **/
-        planets.depth.distance.title = data.sections[prop][1].key;
-        planets.depth.distance.value = data.sections[prop][1].val;
-
-        planets.depth.mass.title = data.sections[prop][2].key;
-        planets.depth.mass.value = data.sections[prop][2].val;
-
-        planets.depth.surfaceTemperature.title = data.sections[prop][3].key;
-        planets.depth.surfaceTemperature.value = data.sections[prop][3].val;
-
-        planets.depth.volume.title = data.sections[prop][4].key;
-        planets.depth.volume.value = data.sections[prop][4].val;
-
+        let i = 1;
+        for (const element in planets.depth) {
+          if (planets.depth.hasOwnProperty(element)) {
+            planets.depth[element].title = data.sections[prop][i].key;
+            planets.depth[element].value = data.sections[prop][i].val;
+            i++;
+          }
+        }
         this.listOfPlanets.push(planets);
       }
     }

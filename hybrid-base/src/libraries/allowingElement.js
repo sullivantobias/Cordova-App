@@ -1,4 +1,4 @@
-import { ELEMENTS } from '../global/allowedElements';
+import {ELEMENTS} from '../global/allowedElements';
 
 export const allowingElement = (element) => {
   ELEMENTS.pageStatePrevious = [];

@@ -54,7 +54,7 @@ export default {
         }, 80);
 
         const panel = this.nextElementSibling;
-        
+
         if (panel.style.height) {
           panel.style.height = null;
           this.classList.remove('active');
@@ -73,6 +73,7 @@ export default {
       });
     });
 
+    /** create the table for depth informations **/
     this.createTable();
   },
 
