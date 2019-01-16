@@ -1,14 +1,17 @@
 @import "../../styles/helper";
 
-.title {
-  background-color: black;
-  top: 0;
-  position: fixed !important;
-  z-index: 100;
-  left: 0;
-  color: white;
-  font-size: 30px;
-  margin: 0 0 30px 0;
-  padding-top: 30px;
-  padding-bottom: 50px;
+.header {
+  .title {
+    background-color: black;
+    top: 0;
+    position: fixed !important;
+    z-index: 100;
+    left: 0;
+    color: white;
+    font-size: 30px;
+    margin: 0 0 30px 0;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
 }
+
