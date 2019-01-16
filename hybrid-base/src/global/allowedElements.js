@@ -5,6 +5,10 @@ export let ELEMENTS = {
   description: {
     allow: false,
   },
+  satellites: {
+    allow: false,
+  },
+
   previous: {
     allow: false,
   },

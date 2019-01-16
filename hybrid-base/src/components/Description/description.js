@@ -1,6 +1,8 @@
 import {planetsInformations} from '../../libraries/planetsInformation';
 
 import Scroll from 'zenscroll';
+import {ELEMENTS} from "../../global/allowedElements";
+import {allowingElement} from "../../libraries/allowingElement";
 
 /**
  * Description component JS
@@ -26,7 +28,8 @@ export default {
           title: '',
           value: ''
         }
-      }
+      },
+      ELEMENTS
     };
   },
 
@@ -90,7 +93,8 @@ export default {
 
       this.depthTable.volume.title = this.planet.depth.volume.title;
       this.depthTable.volume.value = this.planet.depth.volume.value;
-    }
+    },
+    allowingElement
   }
   ,
 };

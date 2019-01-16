@@ -29,6 +29,10 @@ export class planetsInformations {
           mass: {title: '', value: ''},
           surfaceTemperature: {title: '', value: ''},
           volume: {title: '', value: ''}
+        },
+        satellites: {
+          nb: 0,
+          names: []
         }
       };
 
@@ -43,6 +47,14 @@ export class planetsInformations {
         objectToFill.push(planets);
       } else {
         planets.overview = data.sections[prop][0].Overview;
+
+        if (data.sections[prop][0].Moons) {
+          planets.satellites.nb = data.sections[prop][0].Moons.length;
+
+          data.sections[prop][0].Moons.forEach((item) => {
+            planets.satellites.names.push(item);
+          })
+        }
 
         /** retrieve depth informations **/
         let i = 1;

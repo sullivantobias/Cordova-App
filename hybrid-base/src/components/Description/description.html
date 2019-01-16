@@ -1,23 +1,24 @@
- <div class="container description">
-    <div class="row">
-      <div class="col-12">
-        <img :src="planet.url" class="img-fluid"/>
-        <h1 class="text-center col-12 titlePlanet">{{ planet.title }}</h1>
-        <button class="accordion"> Overview <i class="fa fa-angle-down"></i></button>
-        <div class="panel">
-          <p class="overview">{{ planet.overview }}</p>
-        </div>
-        <button class="accordion"> In Depth <i class="fa fa-angle-down"></i></button>
-        <div class="panel">
-          <table class="col-12 depth" v-for="info in depthTable">
-            <tr class="titleDepth">
-              <th>{{ info.title }}</th>
-            </tr>
-            <tr class="valueDepth">
-              <td>{{ info.value }}</td>
-            </tr>
-          </table>
-        </div>
+<div class="container description">
+  <div class="row">
+    <div class="col-12">
+      <img :src="planet.url" class="img-fluid"/>
+      <h1 class="text-center col-12 titlePlanet">{{ planet.title }}</h1>
+      <button class="accordion"> Overview <i class="fa fa-angle-down"></i></button>
+      <div class="panel">
+        <p class="overview">{{ planet.overview }}</p>
       </div>
+      <button class="accordion"> In Depth <i class="fa fa-angle-down"></i></button>
+      <div class="panel">
+        <table class="col-12 depth" v-for="info in depthTable">
+          <tr class="titleDepth">
+            <th>{{ info.title }}</th>
+          </tr>
+          <tr class="valueDepth">
+            <td>{{ info.value }}</td>
+          </tr>
+        </table>
+      </div>
+      <button @click="allowingElement(ELEMENTS.satellites)" v-if='planet.satellites.nb > 0' class="satellites">Natural Satellites ({{planet.satellites.nb}})</button>
     </div>
   </div>
+</div>
