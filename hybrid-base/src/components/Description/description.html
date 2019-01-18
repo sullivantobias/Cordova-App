@@ -18,7 +18,7 @@
           </tr>
         </table>
       </div>
-      <button @click="allowingElement(ELEMENTS.satellites)" v-if='planet.satellites.nb > 0' class="satellites">Natural Satellites ({{planet.satellites.nb}})</button>
+      <button @click="allowingElement(ELEMENTS.satellites)" v-if="depthTable.numberOfSatellites" class="satellites">Natural Satellites ({{this.depthTable.numberOfSatellites}})</button>
     </div>
   </div>
 </div>

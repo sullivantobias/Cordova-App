@@ -27,7 +27,8 @@ export default {
         volume: {
           title: '',
           value: ''
-        }
+        },
+        numberOfSatellites: 0,
       },
       ELEMENTS
     };
@@ -35,6 +36,7 @@ export default {
 
   mounted() {
     window.scrollTo(0, 0);
+
 
     const planetsInfos = new planetsInformations();
     planetsInfos.createCards();
@@ -54,7 +56,7 @@ export default {
 
         setTimeout(() => {
           Scroll.to(this);
-        }, 80);
+        }, 100);
 
         const panel = this.nextElementSibling;
 
@@ -93,6 +95,8 @@ export default {
 
       this.depthTable.volume.title = this.planet.depth.volume.title;
       this.depthTable.volume.value = this.planet.depth.volume.value;
+
+      if (this.planet.satellites.nb > 0) this.depthTable.numberOfSatellites = this.planet.satellites.nb;
     },
     allowingElement
   }
