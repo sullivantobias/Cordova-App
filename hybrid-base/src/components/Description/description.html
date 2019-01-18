@@ -17,7 +17,16 @@
             <td>{{ info.value }}</td>
           </tr>
         </table>
+        <button class="accordion"> More <i class="fa fa-angle-down"></i></button>
+        <div class="panel">
+          <table class="col-12 depth">
+            <tr class="valueDepth">
+              <td>Test</td>
+            </tr>
+          </table>
+        </div>
       </div>
+
       <button @click="allowingElement(ELEMENTS.satellites)" v-if="numberOfSatellites" class="satellites">Natural Satellites ({{numberOfSatellites}})</button>
     </div>
   </div>

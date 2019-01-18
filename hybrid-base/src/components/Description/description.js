@@ -35,6 +35,7 @@ export default {
   },
 
   mounted() {
+    const that = this;
     window.scrollTo(0, 0);
 
 
@@ -65,15 +66,20 @@ export default {
           this.classList.remove('active');
           this.firstElementChild.classList.remove('active');
         } else {
+
+          let saveHeight = that.saveHeight(this.parentElement);
+
           acc.forEach((element) => {
             element.nextElementSibling.style.height = null;
             element.classList.remove('active');
             element.firstElementChild.classList.remove('active');
           });
+
           this.classList.add('active');
-          this.firstElementChild.classList.remove('active');
           this.firstElementChild.classList.add('active');
           panel.style.height = panel.scrollHeight + "px";
+
+          this.parentElement.style.height = saveHeight;
         }
       });
     });
@@ -97,6 +103,15 @@ export default {
       this.depthTable.volume.value = this.planet.depth.volume.value;
 
       if (this.planet.satellites.nb > 0) this.numberOfSatellites = this.planet.satellites.nb;
+    },
+    saveHeight(el) {
+      let tempHeight = 0;
+      el.childNodes.forEach((item) => {
+        if (item.className === "accordion") {
+          tempHeight = el.style.height
+        }
+      });
+      return tempHeight;
     },
     allowingElement
   }

@@ -30,6 +30,7 @@ export class planetsInformations {
           surfaceTemperature: {title: '', value: ''},
           volume: {title: '', value: ''}
         },
+        moreInDepth: {},
         satellites: {
           nb: 0,
           names: []
@@ -64,6 +65,11 @@ export class planetsInformations {
             planets.depth[element].value = data.sections[prop][i].val;
             i++;
           }
+        }
+
+        /** retrieve moreInDepth informations **/
+        if (data.sections[prop][5]) {
+          planets.moreInDepth = data.sections[prop][5].moreInDepth;
         }
         this.listOfPlanets.push(planets);
       }

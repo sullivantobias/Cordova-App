@@ -20,15 +20,9 @@ export default {
     this.planet = planetsInfos.specificPlanet(
       window.location.hash.split('-')[2]
     );
-
-    /** create the table for depth informations **/
-    this.createSatellites();
   },
 
   methods: {
-    createSatellites() {
-     console.log(this.planet.satellites.names)
-    },
     allowingElement
   }
   ,
