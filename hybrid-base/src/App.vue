@@ -13,6 +13,9 @@
       <transition name="slide-fade">
         <Description v-if="ELEMENTS.description.allow"/>
       </transition>
+      <transition name="slide-fade">
+        <Satellites v-if="ELEMENTS.satellites.allow"/>
+      </transition>
 
 
     </div>
@@ -26,6 +29,7 @@
   import Description from "./components/Description/Description.vue";
   import BackToTop from "./components/BackToTop/Backtotop.vue";
   import PreviousArrow from "./components/previousArrow/Previousarrow.vue";
+  import Satellites from "./components/Satellites/Satellites.vue";
 
 
   import {allowingElement} from "./libraries/allowingElement";
@@ -40,6 +44,7 @@
       Description,
       BackToTop,
       PreviousArrow,
+      Satellites
     },
     data() {
       return {
@@ -66,19 +71,23 @@
   }
 
   .slide-fade {
-    &-enter-active {
+    &-enter-active, &-arrow-enter-active {
       transition: all .8s ease;
     }
+
     &-leave-active {
       transition: all .2s ease-in-out;
     }
+
     &-arrow-leave-active {
       transition: all .1s ease-in-out;
     }
+
     &-enter, &-arrow-enter {
       transform: translateX(-500px);
       opacity: 0;
     }
+
     &-leave-to, &-arrow-leave-to {
       transform: translateX(500px);
       opacity: 0;

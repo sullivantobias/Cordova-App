@@ -59,7 +59,7 @@
     overflow: hidden;
     transition: height 0.3s ease-out;
 
-    .depth {
+    table.depth {
       border: 1px solid black;
 
       .titleDepth {
@@ -78,6 +78,10 @@
         td {
           padding: 10px;
         }
+      }
+
+      &:last-child {
+        margin-bottom: 25px;
       }
     }
   }

@@ -28,8 +28,8 @@ export default {
           title: '',
           value: ''
         },
-        numberOfSatellites: 0,
       },
+      numberOfSatellites: 0,
       ELEMENTS
     };
   },
@@ -96,7 +96,7 @@ export default {
       this.depthTable.volume.title = this.planet.depth.volume.title;
       this.depthTable.volume.value = this.planet.depth.volume.value;
 
-      if (this.planet.satellites.nb > 0) this.depthTable.numberOfSatellites = this.planet.satellites.nb;
+      if (this.planet.satellites.nb > 0) this.numberOfSatellites = this.planet.satellites.nb;
     },
     allowingElement
   }
