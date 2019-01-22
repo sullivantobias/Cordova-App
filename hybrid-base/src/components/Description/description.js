@@ -49,40 +49,47 @@ export default {
     const acc = document.querySelectorAll(".accordion");
 
     acc.forEach((item) => {
-      item.addEventListener("click", function () {
+        item.addEventListener("click", function () {
 
-        const defaultDuration = 700;
-        const edgeOffset = 130;
-        Scroll.setup(defaultDuration, edgeOffset);
+          const defaultDuration = 700;
+          const edgeOffset = 130;
+          Scroll.setup(defaultDuration, edgeOffset);
 
-        setTimeout(() => {
-          Scroll.to(this);
-        }, 100);
+          setTimeout(() => {
+            Scroll.to(this);
+          }, 100);
 
-        const panel = this.nextElementSibling;
+          const panel = this.nextElementSibling;
+          const saveHeight = that.saveHeight(this.parentElement);
 
-        if (panel.style.height) {
-          panel.style.height = null;
-          this.classList.remove('active');
-          this.firstElementChild.classList.remove('active');
-        } else {
+          if (panel.style.height) {
+            panel.style.height = null;
+            this.classList.remove('active');
+            this.firstElementChild.classList.remove('active');
+          } else {
+            acc.forEach((element) => {
+              element.nextElementSibling.style.height = null;
+              element.classList.remove('active');
+              element.firstElementChild.classList.remove('active');
+            });
 
-          let saveHeight = that.saveHeight(this.parentElement);
+            this.classList.add('active');
+            this.firstElementChild.classList.add('active');
+            panel.style.height = panel.scrollHeight + "px";
+          }
 
-          acc.forEach((element) => {
-            element.nextElementSibling.style.height = null;
-            element.classList.remove('active');
-            element.firstElementChild.classList.remove('active');
-          });
-
-          this.classList.add('active');
-          this.firstElementChild.classList.add('active');
-          panel.style.height = panel.scrollHeight + "px";
-
-          this.parentElement.style.height = saveHeight;
-        }
-      });
-    });
+          if (this.parentElement.classList.contains('panel')) {
+            if (this.classList.contains('active')) {
+              const allHeight = parseInt(panel.style.height, 10) + parseInt(saveHeight, 10) + 'px'
+              this.parentElement.style.height = allHeight;
+            } else {
+              this.parentElement.style.height = 481 + "px"
+            }
+          }
+        });
+      }
+    )
+    ;
 
     /** create the table for depth informations **/
     this.createTable();
@@ -103,7 +110,8 @@ export default {
       this.depthTable.volume.value = this.planet.depth.volume.value;
 
       if (this.planet.satellites.nb > 0) this.numberOfSatellites = this.planet.satellites.nb;
-    },
+    }
+    ,
     saveHeight(el) {
       let tempHeight = 0;
       el.childNodes.forEach((item) => {
@@ -112,8 +120,10 @@ export default {
         }
       });
       return tempHeight;
-    },
+    }
+    ,
     allowingElement
   }
   ,
-};
+}
+;

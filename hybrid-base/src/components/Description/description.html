@@ -17,11 +17,14 @@
             <td>{{ info.value }}</td>
           </tr>
         </table>
-        <button class="accordion"> More <i class="fa fa-angle-down"></i></button>
+        <button id="more" class="accordion"> More <i class="fa fa-angle-down"></i></button>
         <div class="panel">
-          <table class="col-12 depth">
+          <table class="col-12 depth" v-for="info in depthTable">
+            <tr class="titleDepth">
+              <th>{{ info.title }}</th>
+            </tr>
             <tr class="valueDepth">
-              <td>Test</td>
+              <td>{{ info.value }}</td>
             </tr>
           </table>
         </div>
