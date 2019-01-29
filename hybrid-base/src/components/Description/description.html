@@ -19,18 +19,20 @@
         </table>
         <button id="more" class="accordion"> More <i class="fa fa-angle-down"></i></button>
         <div class="panel">
-          <table class="col-12 depth" v-for="info in depthTable">
+          <table class="col-12 depth" v-for="(info, key) in planet.moreInDepth">
             <tr class="titleDepth">
-              <th>{{ info.title }}</th>
+              <th>{{ key }}</th>
             </tr>
             <tr class="valueDepth">
-              <td>{{ info.value }}</td>
+              <td>{{ info }}</td>
             </tr>
           </table>
         </div>
       </div>
 
-      <button @click="allowingElement(ELEMENTS.satellites)" v-if="numberOfSatellites" class="satellites">Natural Satellites ({{numberOfSatellites}})</button>
+      <button @click="allowingElement(ELEMENTS.satellites)" v-if="numberOfSatellites" class="satellites">Natural
+        Satellites ({{numberOfSatellites}})
+      </button>
     </div>
   </div>
 </div>

@@ -3,6 +3,7 @@ import {planetsInformations} from '../../libraries/planetsInformation';
 import Scroll from 'zenscroll';
 import {ELEMENTS} from "../../global/allowedElements";
 import {allowingElement} from "../../libraries/allowingElement";
+import data from "../../dataset/system-solar-planets";
 
 /**
  * Description component JS
@@ -66,6 +67,10 @@ export default {
             panel.style.height = null;
             this.classList.remove('active');
             this.firstElementChild.classList.remove('active');
+
+            document.querySelectorAll('.panel').forEach((item) => {
+              item.style.height = null;
+            })
           } else {
             acc.forEach((element) => {
               element.nextElementSibling.style.height = null;
