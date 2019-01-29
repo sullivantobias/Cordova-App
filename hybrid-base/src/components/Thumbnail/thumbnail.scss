@@ -5,6 +5,11 @@
 
   .card {
     border: 3px solid $PRed;
+    border-radius: 0;
     margin-bottom: 40px;
+
+    &-img {
+      border-radius: 0;
+    }
   }
 }

@@ -1,0 +1,16 @@
+@import "../../styles/helper";
+
+.previousArrow {
+  a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px 16px;
+    margin-bottom: 20px;
+
+    &.previous {
+      background-color: $PRed;
+      color: white;
+      border-radius: 50%;
+    }
+  }
+}

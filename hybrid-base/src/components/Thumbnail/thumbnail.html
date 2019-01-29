@@ -1,8 +1,11 @@
-<div class="container">
+<div class="container thumbnail">
   <div class="row">
-    <div class="col-12 thumbnail">
+    <div class="col-12">
       <div v-for="card in cards">
-        <a href="description">
+        <a
+          href="#planets-description"
+          @click="allowingElement(ELEMENTS.description)"
+        >
           <b-card
             overlay
             :img-src="card.url"
@@ -16,6 +19,4 @@
       </div>
     </div>
   </div>
-
-  <div></div>
 </div>

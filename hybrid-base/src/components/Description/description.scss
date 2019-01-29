@@ -1,1 +1,93 @@
 @import "../../styles/helper";
+
+.description {
+  .titlePlanet {
+    background-color: #5592c6;
+    color: $PRed;
+    margin-bottom: 30px;
+    font-size: 35px;
+    text-transform: uppercase;
+  }
+
+  .overview {
+    padding: 0;
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: justify;
+  }
+
+  .accordion, .satellites {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    transition: all .6s;
+
+    i {
+      font-size: 33px;
+      right: 30px;
+      transition: all .6s;
+
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
+
+    &.active {
+      background-color: $PRed;
+      color: black;
+
+      i {
+        color: white;
+      }
+    }
+
+    &:not(.active) {
+      margin-bottom: 25px;
+    }
+
+    &#more {
+      margin-top: 25px;
+    }
+
+  }
+
+  .panel {
+    background-color: white;
+    margin-top: 10px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+
+    table.depth {
+      border: 1px solid black;
+
+      .titleDepth {
+        background-color: black;
+        color: white;
+
+        th {
+          padding: 10px;
+        }
+      }
+
+      .valueDepth {
+        background-color: white;
+        color: black;
+
+        td {
+          padding: 10px;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+

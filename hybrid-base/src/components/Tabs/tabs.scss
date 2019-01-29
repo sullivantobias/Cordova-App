@@ -1,5 +1,4 @@
 @import "~material-bottom-nav";
-
 @import "../../styles/helper";
 
 .bottom-nav {
@@ -13,11 +12,14 @@
   a {
     text-align: center;
     text-decoration: none;
+
     &:hover {
       color: $PRed;
     }
   }
-  i {
+
+  i,
+  span {
     font-size: 30px;
     pointer-events: none;
   }

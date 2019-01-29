@@ -2,19 +2,28 @@
  * Tabs component JS
  */
 
-import LastSegment from '../../libraries/lastSegmentUrl';
+import {allowingElement} from '../../libraries/allowingElement';
+
+import {ELEMENTS} from '../../global/allowedElements.js';
 
 export default {
-  mounted() {
-    const href = LastSegment(window.location.pathname);
-    document
-      .querySelector('a.bottom-nav__action--active')
-      .classList.remove('bottom-nav__action--active');
+  data() {
+    return {
+      ELEMENTS,
+    };
+  },
 
-    document.querySelectorAll('a').forEach((item) => {
-      if (LastSegment(item) === href) {
-        item.classList.add('bottom-nav__action--active');
+  methods: {
+    activeTabs(element) {
+      if (document.querySelector('a.bottom-nav__action--active')) {
+        document
+          .querySelector('a.bottom-nav__action--active')
+          .classList.remove('bottom-nav__action--active');
       }
-    });
+
+      if (!element.classList.contains('bottom-nav__action--active'))
+        element.classList.add('bottom-nav__action--active');
+    },
+    allowingElement,
   },
 };

@@ -1,4 +1,4 @@
-export default function(str, no_words) {
+export default function (str, no_words) {
   return (
     str
       .split(' ')
