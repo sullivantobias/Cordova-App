@@ -27,6 +27,10 @@
     font-size: 22px;
     transition: all .6s;
 
+    &.redirect {
+      margin-top: 25px;
+    }
+
     i {
       font-size: 33px;
       right: 30px;
@@ -49,11 +53,6 @@
     &:not(.active) {
       margin-bottom: 25px;
     }
-
-    &#more {
-      margin-top: 25px;
-    }
-
   }
 
   .panel {

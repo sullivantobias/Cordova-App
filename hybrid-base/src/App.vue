@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div class="container content">
+      <Header/>
       <transition name="slide-fade-arrow">
         <PreviousArrow v-if="ELEMENTS.previous.allow"/>
       </transition>
-      <Header/>
       <Tabs/>
       <BackToTop/>
       <transition name="slide-fade">
@@ -66,7 +66,6 @@
   /** to have a good scroll **/
   .content {
     padding: 0;
-    margin-top: 130px;
     margin-bottom: 70px;
   }
 

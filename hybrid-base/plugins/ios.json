@@ -8,7 +8,7 @@
   },
   "installed_plugins": {
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.cordova.spaceProject"
+      "PACKAGE_NAME": "com.cordova.Planetae"
     }
   },
   "dependent_plugins": {}
