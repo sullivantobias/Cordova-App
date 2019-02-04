@@ -29,10 +29,16 @@
           </table>
         </div>
       </div>
-
-      <button @click="allowingElement(ELEMENTS.satellites)" v-if="numberOfSatellites" class="satellites redirect">Natural
-        Satellites ({{numberOfSatellites}})
+      <button v-show="numberOfSatellites > 0" class="accordion"> Moons ({{ numberOfSatellites }})<i
+        class="fa fa-angle-down"></i>
       </button>
+      <div class="panel">
+        <table class="col-12 depth" v-for="stl in namesOfSatellites">
+          <tr class="titleDepth stl">
+            <th>{{ stl }}</th>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </div>

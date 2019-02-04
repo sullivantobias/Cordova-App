@@ -13,11 +13,6 @@
       <transition name="slide-fade">
         <Description v-if="ELEMENTS.description.allow"/>
       </transition>
-      <transition name="slide-fade">
-        <Satellites v-if="ELEMENTS.satellites.allow"/>
-      </transition>
-
-
     </div>
   </div>
 </template>
@@ -29,7 +24,6 @@
   import Description from "./components/Description/Description.vue";
   import BackToTop from "./components/BackToTop/Backtotop.vue";
   import PreviousArrow from "./components/previousArrow/Previousarrow.vue";
-  import Satellites from "./components/Satellites/Satellites.vue";
 
 
   import {allowingElement} from "./libraries/allowingElement";
@@ -43,8 +37,7 @@
       Thumbnail,
       Description,
       BackToTop,
-      PreviousArrow,
-      Satellites
+      PreviousArrow
     },
     data() {
       return {

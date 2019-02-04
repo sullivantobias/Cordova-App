@@ -27,10 +27,6 @@
     font-size: 22px;
     transition: all .6s;
 
-    &.redirect {
-      margin-top: 25px;
-    }
-
     i {
       font-size: 33px;
       right: 30px;
@@ -71,6 +67,11 @@
 
         th {
           padding: 10px;
+        }
+
+        &.stl {
+          border: 2px solid white;
+          text-align: center;
         }
       }
 
