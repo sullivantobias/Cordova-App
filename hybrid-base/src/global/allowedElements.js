@@ -8,6 +8,9 @@ export let ELEMENTS = {
   satellites: {
     allow: false,
   },
+  introduction: {
+    allow: false,
+  },
 
   previous: {
     allow: false,

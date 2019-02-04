@@ -8,6 +8,9 @@
       <Tabs/>
       <BackToTop/>
       <transition name="slide-fade">
+        <Introduction v-if="ELEMENTS.introduction.allow"/>
+      </transition>
+      <transition name="slide-fade">
         <Thumbnail v-if="ELEMENTS.thumbnail.allow"/>
       </transition>
       <transition name="slide-fade">
@@ -24,6 +27,7 @@
   import Description from "./components/Description/Description.vue";
   import BackToTop from "./components/BackToTop/Backtotop.vue";
   import PreviousArrow from "./components/previousArrow/Previousarrow.vue";
+  import Introduction from './components/Introduction/Introduction.vue';
 
 
   import {allowingElement} from "./libraries/allowingElement";
@@ -37,7 +41,8 @@
       Thumbnail,
       Description,
       BackToTop,
-      PreviousArrow
+      PreviousArrow,
+      Introduction
     },
     data() {
       return {

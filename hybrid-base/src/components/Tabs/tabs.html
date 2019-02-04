@@ -2,7 +2,7 @@
   <a
     class="bottom-nav__action bottom-nav__action--active"
     href="/#"
-    @click="activeTabs($event.target), allowingElement()"
+    @click="activeTabs($event.target), allowingElement(ELEMENTS.introduction)"
   >
     <i class="fa fa-home"></i> <span class="bottom-nav__label">Home</span>
   </a>
@@ -13,9 +13,5 @@
     @click="allowingElement(ELEMENTS.thumbnail), activeTabs($event.target)"
   >
     <i class="fa fa-home"></i> <span class="bottom-nav__label">Planets</span>
-  </a>
-
-  <a class="bottom-nav__action" href="#" @click="activeTabs($event.target)">
-    <i class="fa fa-home"></i> <span class="bottom-nav__label">Home</span>
   </a>
 </nav>
