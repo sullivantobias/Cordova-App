@@ -1,0 +1,15 @@
+@import "../../styles/helper";
+
+.introduction {
+  text-align: justify;
+
+  dt {
+    padding: 10px;
+    background-color: black;
+    color: white;
+  }
+  dd {
+    background-color: #b7b2b9;
+    padding: 10px;
+  }
+}

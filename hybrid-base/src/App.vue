@@ -1,23 +1,21 @@
 <template>
   <div id="app">
     <div class="container content">
+      <Header/>
       <transition name="slide-fade-arrow">
         <PreviousArrow v-if="ELEMENTS.previous.allow"/>
       </transition>
-      <Header/>
       <Tabs/>
       <BackToTop/>
+      <transition name="slide-fade">
+        <Introduction v-if="ELEMENTS.introduction.allow"/>
+      </transition>
       <transition name="slide-fade">
         <Thumbnail v-if="ELEMENTS.thumbnail.allow"/>
       </transition>
       <transition name="slide-fade">
         <Description v-if="ELEMENTS.description.allow"/>
       </transition>
-      <transition name="slide-fade">
-        <Satellites v-if="ELEMENTS.satellites.allow"/>
-      </transition>
-
-
     </div>
   </div>
 </template>
@@ -29,7 +27,7 @@
   import Description from "./components/Description/Description.vue";
   import BackToTop from "./components/BackToTop/Backtotop.vue";
   import PreviousArrow from "./components/previousArrow/Previousarrow.vue";
-  import Satellites from "./components/Satellites/Satellites.vue";
+  import Introduction from './components/Introduction/Introduction.vue';
 
 
   import {allowingElement} from "./libraries/allowingElement";
@@ -44,7 +42,7 @@
       Description,
       BackToTop,
       PreviousArrow,
-      Satellites
+      Introduction
     },
     data() {
       return {
@@ -66,8 +64,8 @@
   /** to have a good scroll **/
   .content {
     padding: 0;
-    margin-top: 130px;
     margin-bottom: 70px;
+    margin-top: 130px;
   }
 
   .slide-fade {

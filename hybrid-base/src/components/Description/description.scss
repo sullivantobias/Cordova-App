@@ -49,11 +49,6 @@
     &:not(.active) {
       margin-bottom: 25px;
     }
-
-    &#more {
-      margin-top: 25px;
-    }
-
   }
 
   .panel {
@@ -72,6 +67,11 @@
 
         th {
           padding: 10px;
+        }
+
+        &.stl {
+          border: 2px solid white;
+          text-align: center;
         }
       }
 

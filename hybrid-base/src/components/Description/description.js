@@ -3,7 +3,6 @@ import {planetsInformations} from '../../libraries/planetsInformation';
 import Scroll from 'zenscroll';
 import {ELEMENTS} from "../../global/allowedElements";
 import {allowingElement} from "../../libraries/allowingElement";
-import data from "../../dataset/system-solar-planets";
 
 /**
  * Description component JS
@@ -31,6 +30,8 @@ export default {
         },
       },
       numberOfSatellites: 0,
+      namesOfSatellites: [],
+      
       ELEMENTS
     };
   },
@@ -114,7 +115,8 @@ export default {
       this.depthTable.volume.title = this.planet.depth.volume.title;
       this.depthTable.volume.value = this.planet.depth.volume.value;
 
-      if (this.planet.satellites.nb > 0) this.numberOfSatellites = this.planet.satellites.nb;
+      this.numberOfSatellites = this.planet.satellites.nb;
+      this.namesOfSatellites = this.planet.satellites.names;
     }
     ,
     saveHeight(el) {
