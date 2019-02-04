@@ -9,7 +9,7 @@ export let ELEMENTS = {
     allow: false,
   },
   introduction: {
-    allow: false,
+    allow: true,
   },
 
   previous: {

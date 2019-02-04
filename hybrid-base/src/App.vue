@@ -65,6 +65,7 @@
   .content {
     padding: 0;
     margin-bottom: 70px;
+    margin-top: 130px;
   }
 
   .slide-fade {
